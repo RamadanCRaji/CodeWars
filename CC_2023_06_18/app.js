@@ -6,7 +6,7 @@
 // Return True if you're better, else False!
 
 // Note:
-// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array 
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array
 
 /*
 PREP
@@ -29,9 +29,8 @@ P:
 */
 
 function betterThanAverage(classPoints, yourPoints) {
-    let length=classPoints.length
-    classPoints=classPoints.reduce((a,b)=>a+b,0);
-    let AverageScore= Math.floor(classPoints/length);
-    return yourPoints>AverageScore? true:false;
-  }
-  
+  let length = classPoints.length;
+  classPoints = classPoints.reduce((a, b) => a + b, 0);
+  let AverageScore = Math.floor(classPoints / length);
+  return yourPoints > AverageScore ? true : false;
+}
