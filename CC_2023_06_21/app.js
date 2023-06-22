@@ -28,3 +28,4 @@ function sumTwoSmallestNumbers(numbers) {
   //   console.log(numbers)
   return numbers[0] + numbers[1];
 }
+
