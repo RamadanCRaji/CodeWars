@@ -32,6 +32,7 @@ function Singleton() {
     },
   };
 }
+
 /*
 ===============================================
 refractoring code because last commit was wrong 
