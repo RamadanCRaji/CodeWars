@@ -50,4 +50,3 @@ function isAnagram(test, original) {
 
     return normalize(test) === normalize(original);
 }
-

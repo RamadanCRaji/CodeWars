@@ -37,5 +37,4 @@ function fizzbuzz(n) {
     }
   }
   return arr;
-}
-console.log(fizzbuzz(3));
+} console.log(fizzbuzz(3));

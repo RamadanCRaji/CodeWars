@@ -78,5 +78,4 @@ function GetSum(a, b) {
   }
   return tmp;
 }
-
 */
