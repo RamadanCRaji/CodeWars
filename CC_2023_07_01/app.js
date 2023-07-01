@@ -33,3 +33,48 @@ function cubeOdd(arr) {
   return newArr.length === 0 ? 0 : newArr.reduce((a, b) => a + b, 0);
 }
 console.log(cubeOdd([1, 2, 3, 4]));
+// Correct solution
+/*
+P:array of integers
+R:
+    return the sum of odd numbers within an array 
+E:
+    [1, 2, 3, 4]), 28
+    [-3,-2,2,3],0
+P:
+ find the odd numbers and push them to a seperate arr
+ use a a typeof  or isNaN() funtion to check if each item is a number
+    for..of loo
+    use arr.reduce to return sum 
+*/
+function cubeOdd(arr) {
+  let newArr = [];
+  for (const item of arr) {
+    if (isNaN(item)) {
+      return undefined;
+    }
+    let cubeNum = Math.pow(item, 3);
+    if (cubeNum % 2 !== 0) {
+      newArr.push(cubeNum);
+    }
+  }
+  return newArr.length === 0 ? 0 : newArr.reduce((a, b) => a + b, 0);
+}
+// using a try catch error here for a forEach loop
+function cubeOdd(arr) {
+  let newArr = [];
+  try {
+    arr.forEach((item) => {
+      if (isNaN(item)) {
+        throw new Error("this is not a number");
+      }
+      let cubeNum = Math.pow(item, 3);
+      if (cubeNum % 2 !== 0) {
+        newArr.push(cubeNum);
+      }
+    });
+  } catch (err) {
+    return undefined;
+  }
+  return newArr.length === 0 ? 0 : newArr.reduce((a, b) => a + b, 0);
+}
