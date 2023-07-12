@@ -27,28 +27,62 @@ P:
     store the parameters as properties values 
     have a method called this.endcode that will encode and another method called this.decode to decode
     this.encode
+        declare a local variable that will hold the characters that are pushed into it
         pass str as an argumnet and compare against abc1
             use a for of loop to loop through str and inside the for of loop use indexOf(x)
-                once I get the index of the that i can  use this.abc2[index] to find the element and then push it into an empty array 
+                once I get the index of the that i can  use this.abc2[index] to find the element and then push it into an empty array
+                if abc1.indexOf(x) if true then value.push(this.abc`[index]) else value.push(x)
             at the end return the arr.join
+            do the same for decode except compare against abc2
 
 */
 function SubstitutionCipher(abc1, abc2) {
   this.abc1 = abc1;
   this.abc2 = abc2;
-  this.value = [];
   this.encode = function (str) {
+    let value = [];
     for (const x of str) {
-      let index = abc1.indexOf(x);
-      this.value.push(this.abc2[index]);
+      let index = this.abc1.indexOf(x);
+      if (index !== -1) {
+        value.push(this.abc2[index]);
+      } else {
+        value.push(x); // character not found, copy it as is
+      }
     }
-    return this.value.join('')
+    return value.join("");
   };
   this.decode = function (str) {
+    let value = [];
     for (const x of str) {
-      let index = abc2.indexOf(x);
-      this.value.push(this.abc1[index]);
+      let index = this.abc2.indexOf(x);
+      if (index !== -1) {
+        value.push(this.abc1[index]);
+      } else {
+        value.push(x); // character not found, copy it as is
+      }
     }
-    return this.value.join('')
+    return value.join("");
+  };
+}
+
+//using a map instead
+function SubstitutionCipher(abc1, abc2) {
+  this.abc1 = abc1;
+  this.abc2 = abc2;
+  this.encode = function (str) {
+    return Array.from(str)
+      .map((x) => {
+        let index = this.abc1.indexOf(x);
+        return index !== -1 ? this.abc2[index] : x;
+      })
+      .join("");
+  };
+  this.decode = function (str) {
+    return Array.from(str)
+      .map((x) => {
+        let index = this.abc2.indexOf(x);
+        return index !== -1 ? this.abc1[index] : x;
+      })
+      .join("");
   };
 }
