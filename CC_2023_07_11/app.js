@@ -38,4 +38,4 @@ function digitalRoot(n) {
     return digitalRoot(num); // want to return a number but it calls fisrt
   }
 }
-// fn(12345) starts running--> fn(12345) calls fn(15)--> fn(15) starts running --> value is 6 and it says return 6 it will return to fn(15)--> fn (15) will return to fn(12345) will return 
+// fn(12345) starts running--> fn(12345) calls fn(15)--> fn(15) starts running --> value is 6 and it says return 6 it will return to fn(15)--> fn (15) will return to fn(12345) will return
