@@ -35,12 +35,13 @@ function removeSmallest(arr) {
   }
   let minNum = Math.min(...arr); // tells me the minimum number in the array
   let indexMin = arr.indexOf(minNum); // grabs me the index of the first minimum in the array. arr has not been mutated so far so this logic will work
-  return arr.filter((e, i) => { //this will fileter the element who's indexs does not equal indexMin
+  return arr.filter((e, i) => {
+    //this will fileter the element who's indexs does not equal indexMin
     if (i !== indexMin) {
       return e;
     }
   });
 }
-console.log(removeSmallest([2,2,1,2,1]))
-console.log(removeSmallest([5,3,2,1,4]))
-console.log(removeSmallest([1,2,3,4,5]))
+console.log(removeSmallest([2, 2, 1, 2, 1]));
+console.log(removeSmallest([5, 3, 2, 1, 4]));
+console.log(removeSmallest([1, 2, 3, 4, 5]));
