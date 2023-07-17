@@ -14,11 +14,11 @@ P:
   lastly i then use slice(4,0,) 
   when doing i can do arr.join
   
-*/ 
-function createPhoneNumber(numbers){
-    // [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-  let chars1=numbers.slice(0,3).join('');
-  let chars2=numbers.slice(3,6).join('');
-  let chars3=numbers.slice(6).join('');
-  return `(${chars1}) ${chars2}-${chars3}`
+*/
+function createPhoneNumber(numbers) {
+  // [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+  let chars1 = numbers.slice(0, 3).join("");
+  let chars2 = numbers.slice(3, 6).join("");
+  let chars3 = numbers.slice(6).join("");
+  return `(${chars1}) ${chars2}-${chars3}`;
 }
