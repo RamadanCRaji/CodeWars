@@ -20,3 +20,9 @@ function countBits(n) {
     return arr.length;
 }
 console.log(countBits(1234))
+
+
+// DRY version 
+function countBits(n) {
+    return n.toString(2).split('1').length - 1;// since the number of segemts in an array is always 1 more than the number of delimeter
+}
