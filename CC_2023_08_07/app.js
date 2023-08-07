@@ -21,5 +21,9 @@ function uniqueInOrder(iterable) {
     let arr = Array.from(iterable).filter((e, i) => e !== iterable[i - 1]);
     return arr;
 }
+//DRY approach 
+function uniqueInOrder(iterable) {
+    return [...iterable].filter((e, i) => e !== iterable[i - 1]);
+}
 console.log(uniqueInOrder([1, 2, 2, 3, 3]))
 console.log(uniqueInOrder('AAAABBBCCDAABBB'))
