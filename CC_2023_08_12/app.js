@@ -69,3 +69,4 @@ function partlist(arr) {
 //i choose to use arr.length-1 becuase i only wanted to use all the elements inside the array and also arr.slice() excludes last item
 
 console.log(partlist(["a", "b", "c", "d"]));
+// i =3 arr.length-1=3 
