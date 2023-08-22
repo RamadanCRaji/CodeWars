@@ -28,3 +28,8 @@ function removeUrlAnchor(url) {
 }
 console.log(removeUrlAnchor('www.codewars.com/katas/'))
 console.log(removeUrlAnchor('www.codewars.com/katas/?page=1#about'))
+//code refractror 
+function removeUrlAnchor(url) {
+    let str = url.split('#')[0];
+    return str[0]
+}
