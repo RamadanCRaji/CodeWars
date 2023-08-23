@@ -24,7 +24,20 @@ function isIsogram(str) {
             }
         }
     })
-    return ans 
+    return ans
 }
 console.log(isIsogram("Dermatoglyphics"))
 console.log(isIsogram("aba"))
+
+// code refracrtoring 
+/*
+For every character char in the array:
+
+    array.indexOf(char) finds the first occurrence of char in the array and returns its index.
+    index is the current index of char as we're iterating through the array.
+    If a character is repeated in the string, array.indexOf(char) will return the index of its first occurrence, which will be less than the current index. Thus, the condition will be false
+*/
+function isIsogram(str) {
+    str = str.toLowerCase();
+    return str.split('').every((char, index, array) => array.indexOf(char) === index);
+}
