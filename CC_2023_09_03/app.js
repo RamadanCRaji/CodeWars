@@ -12,19 +12,10 @@
 
 function order(words) {
     if (words.length === 0) return words
-    let obj = {};
-    let value;
-    words.split(' ').forEach(e => {
-        value = parseInt(e.match(/\d/)[0]);
-        if (!obj[e]) {
-            obj[e]
-            obj[e] = value
-        }
-    });
-    let arr = Object.entries(obj)
-        .sort((a, b) => a[1] - b[1])// sorting the array 
-        .map(e => { return e[0] });
-    return arr.join(' ')
+
+    return words.split(' ')
+        .sort((a, b) => parseInt(a.match(/\d/)[0]) - parseInt(b.match(/\d/)[0]))
+        .join(' ')
 }
 
 // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
