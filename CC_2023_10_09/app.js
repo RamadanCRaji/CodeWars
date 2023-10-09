@@ -9,34 +9,11 @@
     * isTriangle(1,2,2), true
     * 4<5
 * formula of a triangle
-    *1/2 base x height 
-    a^2=b^+c^2
-    i see to sides equal 
-    if a =b =c then yes 
-    if a^2=b^+c^2 then yes 
-    if c^2> a^2+b^2 then yes 
-    if c^2< a^2+b^2 then yes 
-    create fucntion that checks if it meets either of those math conditions
+    * Use the triangle inequality theorem to check to see if the sum of any two sides is greater than the last side 
+    * 
  */
 function isTriangle(a, b, c) {
-    [a, b, c] = [a, b, c].sort((a, b) => a - b)
-    if (isAcute(a, b, c)) return true
-    if (isObtuse(a, b, c)) return true
-    if (isRightAnle(a, b, c)) return true
-    if (isEquiAngle(a, b, c)) return true
-    else { return false; }
-}
-function isRightAnle(a, b, c) {
-    return (c * c) === (b * b) + (a * a)
-}
-function isObtuse(a, b, c) {
-    return (c * c) > (b * b) + (a * a)
-}
-function isAcute(a, b, c) {
-    return (c * c) < (b * b) + (a * a)
-}
-function isEquiAngle(a, b, c) {
-    return (a === b && b === c)
+    return a + b > c && a + c > b && c + b > a
 }
 
 
