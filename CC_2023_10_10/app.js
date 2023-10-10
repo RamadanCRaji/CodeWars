@@ -17,35 +17,23 @@
     is_prime(2)  true  
     is_prime(-1) false 
 Pesudocode
- what is primen number? any number that can only divisible by 1 and itself    
- first check
-    If a number ends in 0, 2, 4, 5, 6 or 8 then it's not prime (except for 2 and 5)
-    if num%2,
-    If the sum of the digits is a multiple of 3, then the number is not prime (except for 3)
-    0,1,2,3,4,5,6,7,8,9
-    first convert input to string
-    convert string into array using Array.from(str)
-    check if arr.length ===1 and if true 
-      then check if n divided by 2,3,4,5,6,7,8,9 will give no reminder
-        if true then n is not a prime number and return false 
-    if arr.length>1 then check if str endsWith 2,4,5,6,7,8 
-       if true  return false 
-    if num< 100 check if its n%7 || n%11 || n%9 equal 0 
-        if 
+ what is prime number? any number that can only divisible by 1 and itself    
+    if num has a divisor greate than it squareroot then it definitely has a divisor less than its squareroot 
+    create a find the squareroot of num and loop
+    create a for loop up until squareoot of n
+    set counter num to the smallest prime number 
+    inside the loop check if num % i ===0 and refurn false
+    out of loop check if num > 1 because prime numbers are integers 
 */
 
 
 function isPrime(num) {
-    let strNum = num.toString();
-    let arrNums = Array.from(strNum)
-    
-    if (num % 3 === 0 || num % 2 === 0 || num % 5 === 0) { return false }
-    else if (arrNums.length > 1) {
-        if (strNum.endsWith('2') || strNum.endsWith('4') || strNum.endsWith('5') || strNum.endsWith('6') || strNum.endsWith('8')) return false
+    for (let i = 2; i < Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false
+        }
     }
-    else if (num < 100) {
-        return num % 7 === 0 || num % 11 === 0 || num % 9 === 0
-    }
-    return true
+    return num > 1
 }
 console.log(isPrime(-1))
+console.log(isPrime(2))
