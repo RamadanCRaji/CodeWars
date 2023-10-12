@@ -36,7 +36,7 @@ function getLengthOfMissingArray(arrayOfArrays) {
         if (i !== 0) {
             let curValue = subArrLengths[i];
             let preValue = subArrLengths[i - 1];
-            let nexVal = (subArrLengths[i+1]);
+            let nexVal = (subArrLengths[i + 1]);
             if ((curValue - preValue) !== (nexVal - curValue)) {
                 let missingValue = (nexVal - curValue) + 1
                 return (missingValue)
@@ -45,5 +45,19 @@ function getLengthOfMissingArray(arrayOfArrays) {
     }
 
 }
-console.log(getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])) //[ 1, 2, 4, 5 ]
-console.log(getLengthOfMissingArray([[1, 2, 3], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])) //[1,3,4,5]
+
+// code refractoring 
+// instead of checking to to see if the differnce between the current number and previous are the same as the difference between the current number and the next number 
+// just check to see if differnce between the current number and previous is greater than 1 and if it is then return previous num +1 
+
+function getLengthOfMissingArray(arrayOfArrays) {
+    if (arrayOfArrays === null || arrayOfArrays.length === 0 || arrayOfArrays.some(e => !e || e.length === 0)) {
+        return 0
+    }
+    let subArrLengths = arrayOfArrays.sort((a, b) => a.length - b.length).map(e => e.length)
+    for (let i = 1; i < subArrLengths.length; i++) {
+        if (subArrLengths[i] - subArrLengths[i - 1] > 1) {
+            return subArrLengths[i - 1] + 1
+        }
+    }
+}
