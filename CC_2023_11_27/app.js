@@ -30,6 +30,20 @@ function adjacentElementsProduct(array) {
     return maxValue;
 }
 
+// another solution
+
+/**
+ * create an empty array 
+ * push the product of the current number and previous one inside empty array 
+ * use Math.max to find the max number and return that number
+ */
+function adjacentElementsProduct(array) {
+    let arr = [];
+    for (let i = 1; i < array.length; i++) {
+        arr.push(array[i] * array[i - 1])
+    }
+    return Math.max(...arr)
+}
 console.log(adjacentElementsProduct([2, 6]))// => 12
 console.log(adjacentElementsProduct([1, 2, 3, 4]))// => 12
 console.log(adjacentElementsProduct([2, 6, 7]))// => 42
