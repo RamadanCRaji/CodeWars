@@ -36,5 +36,10 @@ function switcheroo(str) {
 function makeSwitch(e) {
     return e === 'a' ? 'b' : 'a'
 }
+
+function switcheroo(str) {
+    let strArr = str.split('').map(e => e === 'b' ? 'a' : e == 'a' ? 'b' : e)
+    return strArr.join('')
+}
 console.log(switcheroo('abdfcs')) // -> acdfbs
 console.log(switcheroo('aaabcccbaaa')) // bbbacccabbb
