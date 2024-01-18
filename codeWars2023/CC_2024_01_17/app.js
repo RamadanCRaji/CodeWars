@@ -3,3 +3,21 @@
 // // output: sorted array
 // sortme = function( names ){
 // }
+
+/**
+ * Paramters
+ * input is an array of integers
+ * Return
+ *  the array with its strings elements sorted lexographically
+ */
+
+function sortMe(names) {
+   // input th array and spread it to avoid mutation
+   // use sort method for array
+   // create cbf inside sort method for comaprions --- localeCompare
+   let sortedNames = [...names].sort((str1, str2) => str1.localeCompare(str2));
+   return sortedNames;
+}
+
+//Examples
+console.log(sortMe(["one", "two", "three"])); //=> ["one", "three", "two"]
