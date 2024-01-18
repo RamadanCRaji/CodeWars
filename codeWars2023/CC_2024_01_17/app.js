@@ -19,5 +19,13 @@ function sortMe(names) {
    return sortedNames;
 }
 
+// asssuming i did not need to worry about potential accents on strings
+function sortme(names) {
+   // input th array and spread it to avoid mutation
+   // use sort method for array
+   // create cbf inside sort method for comaprions --- localeCompare
+   let sortedNames = [...names].sort();
+   return sortedNames;
+}
 //Examples
 console.log(sortMe(["one", "two", "three"])); //=> ["one", "three", "two"]
