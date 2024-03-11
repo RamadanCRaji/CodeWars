@@ -19,10 +19,7 @@ function countPositivesSumNegatives(input) {
    let sumofNegative = input
       .filter((e) => e < 0)
       .reduce((acc, next) => acc + next, 0);
-   let finalAns = [];
-   finalAns.push(totalPositveNum);
-   finalAns.push(sumofNegative);
-   return finalAns;
+   return [totalPositveNum, sumofNegative];
 }
 
 console.log(
