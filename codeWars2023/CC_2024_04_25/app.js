@@ -29,4 +29,8 @@ console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]), [
 
 function moveZeros(arr) {
    let arrOfNonZeros = arr.filter((e) => e !== 0);
+   let arrOfZeros = arr.filter((e) => {
+      return e === 0;
+   });
+   return arrOfNonZeros.concat(arrOfZeros);
 }
