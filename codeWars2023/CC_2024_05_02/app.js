@@ -20,29 +20,44 @@ P
         const one=()=>1
     function for each math expression
         minus(three())
-            const minus = (callback) => -1 * callback(); //change the callback to negative
-            const divideBy = (callback) => 1 / callback();
+            const minus = (callback) => left orperand - right operand
+            const divideBy = (callback) => left oprand * 1 / right operand;
 
     each calculation will have one operand and 2 inters
+        left operand [oprator] right operand 
 R
     return values based on function that were written
 
 P
-    the operands takes in anguments which are numbers 
-        the number operator function is invoke that inside the operand funtion and ruturns that callback invoked with appropriate sumbol 
-    the outer higher function takes in one argument and invokes that
-    eight(minus(three()))
-        - function eight(callack1(callback2)){
-            return 8(callback1(callback2()))
-        }
-
-
+   on each operand function, check if function number (arg)
+    - if true, pass the number as an argument to the callback
+    - if is not true, we'll just return the number
+    operator function 
+        accept the first argument as the right operand 
+            - return a function with argument and the value of tht right operand
+    retutn the final calculation
 */
 
-// Example
-// seven(times(five())); // must return 35
-// four(plus(nine())); // must return 13
-// eight(minus(three())); // must return 5
-// six(dividedBy(two())); // must return 3
+// Number functons
+const zero = (callback) => (callback ? callback(0) : 0);
+const one = (callback) => (callback ? callback(1) : 1);
+const two = (callback) => (callback ? callback(2) : 2);
+const three = (callback) => (callback ? callback(3) : 3);
+const four = (callback) => (callback ? callback(4) : 4);
+const five = (callback) => (callback ? callback(5) : 5);
+const six = (callback) => (callback ? callback(6) : 6);
+const seven = (callback) => (callback ? callback(7) : 7);
+const eight = (callback) => (callback ? callback(8) : 8);
+const nine = (callback) => (callback ? callback(9) : 9);
 
-function eight(callback1) {}
+// operation function
+const times = (right) => (left) => left * right;
+const minus = (right) => (left) => left - right;
+const plus = (right) => (left) => left + right;
+const dividedBy = (right) => (left) => Math.floor(left / right);
+
+// Examples
+console.log(seven(times(five()))); // must return 35
+console.log(four(plus(nine()))); // must return 13
+console.log(eight(minus(three()))); // must return 5
+console.log(six(dividedBy(two()))); // must return 3
