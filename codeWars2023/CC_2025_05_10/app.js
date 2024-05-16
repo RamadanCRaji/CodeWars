@@ -16,6 +16,29 @@
 // Output: "even"
 // Have fun!
 
+/**
+ P
+   input is an array 
+R
+   check is the sum of arr is odd or even
+
+P
+   spread the incomeing array into a new one
+   loop through the array using reduce method
+   sum each item wiht initial value ==0
+   check if final value /2===0?'even':odd
+ */
+
 function oddOrEven(array) {
-   //enter code here
+   let value = [...array].reduce((acc, nextItem) => acc + nextItem, 0);
+   console.log(value);
+   if (Math.abs(value) % 2 === 0) {
+      return "even";
+   } else {
+      return "odd";
+   }
 }
+
+//Example
+console.log(oddOrEven([0, -1, -5])); //==> even
+console.log(oddOrEven([0, 1, 4])); //==> odd
