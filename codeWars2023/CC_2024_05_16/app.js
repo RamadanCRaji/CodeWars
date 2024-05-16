@@ -13,15 +13,13 @@ P
    then using reduce to obtain one more final value and return ans 
 */
 function divCon(x) {
-   let sumOfString = Array.from(x, (C) => typeof C === "string").reduce(
-      (accum, nextItem) => +accum + +nextItem,
-      0
-   );
+   let sumOfString = x
+      .filter((c) => typeof c === "string")
+      .reduce((accum, nextItem) => +accum + +nextItem, 0);
    console.log(sumOfString);
-   let sumOfInt = Array.from(x, (C) => typeof C === "Number").reduce(
-      (accum, nextItem) => accum + nextItem,
-      0
-   );
+   let sumOfInt = x
+      .filter((c) => typeof c === "number")
+      .reduce((accum, nextItem) => accum + nextItem, 0);
    return sumOfInt - sumOfString;
 }
 
