@@ -31,12 +31,7 @@ P
 
 function oddOrEven(array) {
    let value = [...array].reduce((acc, nextItem) => acc + nextItem, 0);
-   console.log(value);
-   if (Math.abs(value) % 2 === 0) {
-      return "even";
-   } else {
-      return "odd";
-   }
+   return Math.abs(value) % 2 === 0 ? "even" : "odd";
 }
 
 //Example
