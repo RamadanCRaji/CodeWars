@@ -10,7 +10,26 @@
 /**
  input is an array of subStrings, notCase sensitive
  return an array of number of letters in each subs occupying the same position in the alphabet
+    - loop through the input using map
+    - pass cfb
+        - split the current charcter into arr and apply filter method on it
+        - check if current index of element is === indexOf(e) in alphabeticalString
+        - return lengh of array
+        - convert all items to lowerCaseFirst
  */
 
+function solve(arr) {
+   let wholeAlphabet = "abcdefghijklmnopqrstuvwxyz";
+   let ans = [...arr].map((currentWord) => {
+      return currentWord
+         .toLowerCase()
+         .split("")
+         .filter((letter, index) => index === wholeAlphabet.indexOf(letter))
+         .length;
+   });
+   return ans;
+}
 //Example
-console.log(solve(["abode", "ABc", "xyzD"])); //=>[4,3,1]
+// console.log(solve(["abode", "ABc", "xyzD"])); //=>[4,3,1]
+solve(["abode", "ABc", "xyzD"]);
+solve(["abide", "ABc", "xyz"]);
