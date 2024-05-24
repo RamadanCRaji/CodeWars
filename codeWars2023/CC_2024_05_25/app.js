@@ -19,3 +19,6 @@ function vowelOne(s) {
    });
    return ans.join("");
 }
+function efficientVowelOne(s) {
+   return ans.replaceAll(/[aeiou]/gi, 1).replaceAll(/[^aeiou]/gi, 0);
+}
