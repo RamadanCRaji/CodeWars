@@ -69,9 +69,10 @@ var list1 = [
 ];
 function greetDevelopers(list) {
    let ans = list.map((obj) => {
-      let newObj = { ...obj };
-      newObj.greeting = `Hi ${obj.firstName}, what do you like the most about ${obj.language}?`;
-      return newObj;
+      return {
+         ...obj,
+         greeting: `Hi ${obj.firstName}, what do you like the most about ${obj.language}?`,
+      };
    });
    console.log(ans);
 }
